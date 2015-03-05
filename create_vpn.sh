@@ -13,7 +13,7 @@ PROT=${6:-"esp"}
 ENCAP=${7:-"tunnel"}
 
 
-ROUTER_REMOTE=${8:-SUBNET_REMOTE}
+ROUTER_REMOTE=${8:-$SUBNET_REMOTE}
 KEY=${9:-"key"}
 
 neutron vpn-ikepolicy-create ${NAME}
