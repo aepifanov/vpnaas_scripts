@@ -8,12 +8,13 @@ SUBNET_LOCAL=${3?"Local SubNet is mandatory"}
 
 PEER_REMOTE=${4?"Remote Peer is mandatory"}
 SUBNET_REMOTE=${5?"Remote SubNet is mandatory"}
-ROUTER_REMOTE=${6:-SUBNET_REMOTE}
 
-PROT=${7:-"esp"}
-ENCAP=${8:-"tunnel"}
+PROT=${6:-"esp"}
+ENCAP=${7:-"tunnel"}
 
-KEY=${7:-key}
+
+ROUTER_REMOTE=${8:-SUBNET_REMOTE}
+KEY=${9:-"key"}
 
 neutron vpn-ikepolicy-create ${NAME}
 neutron vpn-ipsecpolicy-create ${NAME} --encapsulation-mode ${ENCAP} --transform-protocol ${PROT}
